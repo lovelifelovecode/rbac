@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="__STATIC__/rbac/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__STATIC__/rbac/css/dashboard.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+<!--nav-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">RBAC</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="{:url('index')}">Home<span class="sr-only">(current)</span></a></li>
+      </ul>
+      <p class="navbar-text navbar-right">Hi,{:session('user.user_name')}</p>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!--nav-->
+
+<!--title and content-->
+<div class="container-fluid">
+	<div class="col-sm-2 col-md-2 col-lg-2 sidebar">
+	  <ul class="nav nav-sidebar">
+	    <li>权限演示页面</li>
+	    <li><a href="{:url('rbac/index/page1')}">test page1</a></li>
+	    <li><a href="{:url('rbac/index/page2')}">test page2</a></li>
+	    <li><a href="{:url('rbac/index/page3')}">test page3</a></li>
+	    <li><a href="{:url('rbac/index/page4')}">test page4</a></li>
+
+
+	    <li>系统设置</li>
+	    <li><a href="{:url('rbac/user/index')}">用户管理</a></li>
+	    <li><a href="{:url('rbac/role/index')}">角色管理</a></li>
+	    <li><a href="{:url('rbac/authority/index')}">权限管理</a></li>
+
+      <li>操作日志</li>
+      <li><a href="{:url('rbac/OperationLog/index')}">用户操作日志</a></li>
+	  </ul>
+	</div>
+	<div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 col-lg-10 col-lg-offset-2">
+
+  {block name="content"}{/block}
+
+		<hr>
+		<footer>
+			<p class="pull-left">@king</p>
+			<p class="pull-right">Power by skyuse.com</p>
+		</footer>
+	</div>
+</div>
+<!--title and content-->
+  </body>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="__STATIC__/rbac/js/jquery1.12.4.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="__STATIC__/rbac/js/bootstrap.min.js"></script>
+</html>
